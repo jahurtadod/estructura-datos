@@ -5,6 +5,8 @@
  */
 package clase1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jahur
@@ -15,13 +17,18 @@ public class Clase1 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Arreglos
-        Arreglo arreglo = new Arreglo();
-        arreglo.pedirTamaño();
-        arreglo.pedirDatos();
-        arreglo.presentarArreglo();
-        arreglo.buscarNumero();
+        
+        Algoritmos algoritmo = new Algoritmos();
 
+        
+        algoritmo.pedirTamaño();
+        algoritmo.pedirDatos();
+        algoritmo.presentarArreglo();
+        algoritmo.buscarNumero();
+        algoritmo.modificarDato();
+        algoritmo.insertarDato();
+        algoritmo.eliminarDato();
+        algoritmo.bubbleSort();
     }
     
 }
