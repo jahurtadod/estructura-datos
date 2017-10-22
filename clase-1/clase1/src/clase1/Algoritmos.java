@@ -35,7 +35,7 @@ public class Algoritmos {
     }
 
     public void presentarArreglo() {
-        System.out.print("\nSu arreglo es : ");
+        System.out.print("Su arreglo es : ");
         for (int i = 0; i < this.lim; i++) {
             System.out.print(this.A[i] + " ");
         }
