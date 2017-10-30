@@ -20,12 +20,22 @@ public class Ejercicio16 {
          * por el elemento T[i], siendo i un valor leído por teclado. 
          */
         Operaciones op = new Operaciones();
+        Scanner input = new Scanner(System.in);
+        System.out.println("Ingrese el tamaño de la matriz:");
+        int n = input.nextInt();
 
-        double[][] matriz = {{1, -1, 2, 0}, {2, 1, 3, 1}, {3, 1, 4, 3},{2, 1, 7, 0}};
+        double[][] matriz = new double[n][n];
         double d;
 
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz.length; j++) {
+                System.out.printf("Ingrese un valor para la posición [%d, %d] de la matriz: ", i + 1, j + 1);
+                matriz[i][j] = input.nextDouble();
+            }
+        }
+
         d = op.determinante(matriz);
-        
+
         System.out.println("La determinante es: ");
         System.out.println(d);
     }
@@ -33,7 +43,8 @@ public class Ejercicio16 {
     public static class Operaciones {
 
         //Constructor
-        public Operaciones() {}
+        public Operaciones() {
+        }
 
         public double determinante(double[][] matriz) {
 
@@ -44,7 +55,6 @@ public class Ejercicio16 {
 
             if (longitud == 2) {
                 suma = matriz[0][0] * matriz[1][1] - matriz[0][1] * matriz[1][0];
-                System.out.println("suma"+suma);
                 return suma;
             }
             for (int d1 = 0; d1 < longitud; d1++) {
@@ -54,20 +64,15 @@ public class Ejercicio16 {
                             continue;
                         }
                         aux[d2][cnt] = matriz[d2 + 1][d3];
-                        System.out.println(aux[d2][cnt]);
                         cnt++;
                     }
                     cnt = 0;
                 }
-                System.out.println("corte");
                 if (d1 % 2 == 0) {
                     suma += matriz[0][d1] * determinante(aux);
-                    System.out.println("d1:" +d1);
-                    System.out.println("suma2: "+suma);
                 } else {
-                    System.out.println("d1:" +d1);
+
                     suma -= matriz[0][d1] * determinante(aux);
-                    System.out.println("suma2: "+suma);
                 }
             }
             return suma;
