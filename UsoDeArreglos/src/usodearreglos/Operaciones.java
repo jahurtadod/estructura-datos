@@ -30,7 +30,7 @@ public class Operaciones {
         return String.format(
                 "\n\tMENU - ARREGLOS\n"
                 + "INGRESE EL NUMERO DE LA OPCION\n"
-                + "1. Ingresar Arreglo\n"
+                + "1. Ingresar Valores - Arreglo\n"
                 + "2. Presentar Arreglo\n"
                 + "3. Ordenar Arreglo\n"
                 + "4. Insertar Elemento\n"
@@ -69,6 +69,7 @@ public class Operaciones {
                     this.arreglo[i] = 0;
                     break;
                 default:
+                    i = this.arreglo.length;
                     break;
             }
         }
@@ -76,7 +77,7 @@ public class Operaciones {
 
     public void presentarArreglo() {
         System.out.print("Su arreglo es : ");
-        for (int i = 0; i < this.arreglo.length; i++) {
+        for (int i = 0; i < ocupado; i++) {
             System.out.printf("%d ", this.arreglo[i]);
         }
         input.nextLine();
@@ -85,8 +86,8 @@ public class Operaciones {
 
     public void ordenarArreglo() {
         //Metodo Burbuja
-        for (int i = 0; i < this.arreglo.length - 1; i++) {
-            for (int j = 0; j < this.arreglo.length - i - 1; j++) {
+        for (int i = 0; i < ocupado;i++) {
+            for (int j = 0; j < ocupado - i - 1; j++) {
                 if (this.arreglo[j] > this.arreglo[j + 1]) {
                     int temp = this.arreglo[j];
                     this.arreglo[j] = this.arreglo[j + 1];
