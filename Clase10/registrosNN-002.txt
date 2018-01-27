@@ -1,0 +1,8 @@
+LISTADO DE ESTUDIANTES
+Nombres Apellidos Nota1 Nota2 Promedio
+Jose Alcivar 15(Matemáticas) 13(Ingles) 14,00 
+ 
+Luis Andrade 17(Matemáticas) 15(Ingles) 16,00 
+ 
+Lorena Carpio 20(Matemáticas) 18(Ingles) 19,00 
+ 

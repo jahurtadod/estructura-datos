@@ -67,7 +67,7 @@ public class TrabajoSegundoBimestre {
                 + "5. Recorrer la Lista desde Head\n"
                 + "6. Recorrer la Lista desde Tail\n"
                 + "0. Salir...\n"
-                + (char) 27 + "[34m----> ");
+                + (char) 27 + "[0;37m----> ");
     }
 
     public void addNodoInicio(int valor) {
@@ -131,6 +131,8 @@ public class TrabajoSegundoBimestre {
 
     public String deleteNodo(int valor) {
         Nodo actual = this.head;
+        // Si se intenta eliminar sin valores albergados
+        if (this.head == null){return "No hay valores a eliminar";}
         // Se considera si se elimina la cabeza
         if (this.head.valor == valor) {
             if (this.head.sig == null) {
@@ -156,7 +158,7 @@ public class TrabajoSegundoBimestre {
                     }
                     actual = actual.sig;
                 }
-                return "Nodo no eliminado (No existe Nodo con ese valor)";
+                return "Nodo no eliminado (No existe un Nodo con ese valor)";
             }
         }
     }
@@ -164,7 +166,7 @@ public class TrabajoSegundoBimestre {
     public void printFromHead() {
         Nodo actual = this.head;
         // Muestra la lista de color azul para poder indentificarla mas facil
-        System.out.print((char) 27 + "[34m   null ");
+        System.out.print((char) 27 + "[35m   null ");
         while (actual != null) {
             System.out.print("<- [" + actual.valor + "] ->");
             actual = actual.sig;
